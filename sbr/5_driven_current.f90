@@ -36,10 +36,6 @@
         end interface
         inpt=NA1
 
-        do i=1,inpt
-            afld(i)=UPL(i)/RTOR/GP2 !!variant
-        end do
-
         ! ---- starting LH current calculation 
         positive_dc = DrivenCurrent(NA1)
         negative_dc = DrivenCurrent(NA1)
