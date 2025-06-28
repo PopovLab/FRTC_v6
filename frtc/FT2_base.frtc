@@ -27,7 +27,7 @@
     "hdrob": 1.5,
     "cleft": 0.7,
     "cright": 1.5,
-    "cdel": 0.25,
+    "cdel": 0.0,
     "rbord": 0.999,
     "pchm": 0.2,
     "pabs": 0.01,
@@ -56,11 +56,13 @@
     "fp_solver": 0,
     "traj_len_seved": 50,
     "max_number_of_traj": 30000,
-    "max_size_of_traj": 10000
+    "max_size_of_traj": 50000
   },
   "grill_parameters": {
     "Zplus": 8.0,
     "Zminus": -8.0,
+    "ZGapPlus": 2.0,
+    "ZGapMinus": -2.0,
     "ntet": 15,
     "nnz": 100
   }
