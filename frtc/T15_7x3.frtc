@@ -52,15 +52,17 @@
     "itor": 1,
     "ipol": 1,
     "upl_fix": true,
-    "upl_value": 0.0,
+    "upl_value": 0.1,
     "fp_solver": 0,
     "traj_len_seved": 10,
-    "max_number_of_traj": 30000,
+    "max_number_of_traj": 100000,
     "max_size_of_traj": 3000
   },
   "grill_parameters": {
     "Zplus": 34.29,
     "Zminus": -34.29,
+    "ZGapPlus": 5.0,
+    "ZGapMinus": -5.0,
     "ntet": 35,
     "nnz": 51
   }
