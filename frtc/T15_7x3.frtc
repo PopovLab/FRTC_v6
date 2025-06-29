@@ -61,8 +61,8 @@
   "grill_parameters": {
     "Zplus": 34.29,
     "Zminus": -34.29,
-    "ZGapPlus": 5.0,
-    "ZGapMinus": -5.0,
+    "ZGapPlus": 0.0,
+    "ZGapMinus": -0.0,
     "ntet": 35,
     "nnz": 51
   }
