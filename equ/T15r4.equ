@@ -71,8 +71,8 @@ CF3=0.61d0;
 DSTART=0.299;
 debug:0.0001:DSTART::;
 saveprofiles::CF2:CF3:;
-lhcd2017(PELH,CAR14,CAR15,ZRD8):CF1:CF2:CF3:;
-drivencurrent(CULH,ZRD35,ZRD36,CAR12,CAR13,CAR32)::CF2:CF3:;
+lhcd2017(PELH):CF1:CF2:CF3:;
+drivencurrent(CULH,CAR32)::CF2:CF3:;
 
 
 
