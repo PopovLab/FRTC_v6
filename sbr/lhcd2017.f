@@ -58,8 +58,8 @@
       call init_plasma(NA1,ABC,BTOR,RTOR,UPDWN,GP2,
      & AMETR,RHO,SHIF,ELON,TRIA,MU,NE,TE,TI,ZEF,UPL)
 
-      call write_plasma(time)
-      
+      !call write_plasma(time)
+      call write_equilibrium(time)
       call write_lcms
 
       full_spectrum = read_spectrum('lhcd/spectrum.dat')

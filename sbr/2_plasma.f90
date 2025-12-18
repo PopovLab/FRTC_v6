@@ -268,6 +268,27 @@ contains
 
     end subroutine
 
+     subroutine write_equilibrium(time_stamp)
+        real(wp), intent(in) :: time_stamp
+        character(120) file_name
+        integer :: unit_num, iostat
+        integer i
+        ! NAMELIST definition
+        namelist /geometry/  rm, r0, z0
+        namelist /fields/  b_tor0
+        namelist /profile_approx/  cdl,cly,cgm,cmy
+        namelist /radial_data/  rh, rha, delta, ell, gamm, con, tem, temi, zeff, afld
+        
+        write(file_name,'("lhcd/plasma/", f9.7,".nml")')  time_stamp
+        print *, file_name
+        open(newunit= unit_num, file= file_name, status= 'new')
+        write(unit_num, nml=geometry, iostat=iostat)
+        write(unit_num, nml=fields, iostat=iostat)
+        write(unit_num, nml=profile_approx, iostat=iostat)
+        write(unit_num, nml=radial_data, iostat=iostat)
+        close(unit_num)
+    end subroutine
+
     subroutine write_lcms
         !! write lcms
         use constants
