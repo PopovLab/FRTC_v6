@@ -342,14 +342,14 @@ contains
         use lock_module, only: lock2, linf
         implicit none
         real(wp), intent(inout) :: out_pe(*)
-        real(wp) :: rxx(102)
         integer  :: i, j, nrr
         integer  :: klo,khi,ierr
         real(wp) :: hr, fout
-        real(wp) :: pwe(102),wrk(102)
+        real(wp), allocatable :: rxx(:), pwe(:), wrk(:)
 
         hr = 1.d0/dble(nr+1)
         nrr=nr+2
+        allocate(rxx(nr+2), pwe(nr+2), wrk(nr+2))
         rxx(1)=zero
         rxx(nrr)=one
         do j=1,nr
@@ -384,6 +384,7 @@ contains
         end do
         rh(1)=zero
         !
+        deallocate(rxx, pwe, wrk)
     end 
 
     subroutine init_iteration_vars
