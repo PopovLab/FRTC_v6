@@ -1,0 +1,11 @@
+{
+  "name": "T15_1D_Nz_560ph00",
+  "comment": "Nz 5x4 Irzak",
+  "spectrum": {
+    "kind": "spectrum_1D",
+    "source": "spcpz_PAM_5x4x13.6cm_awg=110mm_bwg=18mm_pwg=10mm_dphi=+000.dat",
+    "coordinate_system": 1,
+    "angle": 0.0,
+    "PWM": false
+  }
+}
