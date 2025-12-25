@@ -15,6 +15,7 @@
       use plasma
       use rt_parameters
       use maxwell  
+      use nr_grid, only: dij
       use spectrum_mod    
       use lhcd_module  
       implicit none

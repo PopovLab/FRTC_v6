@@ -5,15 +5,10 @@ module maxwell
       implicit none
       integer, parameter :: i0 = 1002
 
-      real(wp) v_grid(i0,100)
-      !! сетка обычных скоростей
-
-      real(wp) vij(i0,100), fij0(i0,100,2), fij(i0,100,2)
-      real(wp) dfij(i0,100,2), dij(i0,100,2)
 
       logical flag_d0
       !! бывший d0
-      integer jindex,kindex
+      integer jindex, kindex
       !!common/dddql/ d0,jindex,kindex
       
 contains

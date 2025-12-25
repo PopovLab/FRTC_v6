@@ -9,7 +9,7 @@ subroutine fokkerplanck_compute(time, TAU)
     use rt_parameters, only: nr
     use writer_module, only: write_v_array, binary_write_array
     use maxwell, only: jindex, kindex, flag_d0
-    use maxwell, only: vij, fij, fij0, dij, dfij
+    use nr_grid, only: vij, fij, fij0, dij, dfij
     use plasma, only : fvt, enorm, fst
     implicit none
 

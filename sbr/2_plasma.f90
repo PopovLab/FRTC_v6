@@ -507,6 +507,7 @@ contains
         use rt_parameters, only: nr, inew
         use spline_module
         use maxwell        
+        use nr_grid, only: vij, fij, dfij, fij0, dij
         implicit none
         integer j
         real(wp) r, vclt

@@ -103,6 +103,7 @@
         use plasma, only : rh, rh1, fn1,fn2, fvt, sk
         use lock_module
         use maxwell
+        use nr_grid, only: vij, fij0, fij
         use rt_parameters, only : nr, inew
         use driven_current_module
         use math_module        

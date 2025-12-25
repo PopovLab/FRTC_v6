@@ -24,6 +24,7 @@ contains
 
     subroutine distr(vz,j,ifound,fder)
         use lock_module      
+        use rt_parameters, only: nr
         implicit none
         integer, intent(in) :: j
         integer, intent(inout) :: ifound
@@ -34,7 +35,6 @@ contains
         !real*8 vlf,vrt,dflf,dfrt
         !common /a0ghp/ vlf,vrt,dflf,dfrt
         !common/gridv/vgrid(101,100),dfundv(101,100),nvpt
-
         nvp=nvpt
         allocate(vzj(nvp),dfdvj(nvp))
         do i=1, nvp
@@ -80,7 +80,8 @@ contains
         use constants, only: zero
         use rt_parameters, only: nr
         use plasma, only: fvt, vt0, cltn
-        use maxwell, only: i0, vij, dfij, dij
+        use maxwell, only: i0
+        use nr_grid, only: vij, dfij, dij
         use lock_module, only: lock, linf
         implicit none
         integer, intent(in) :: ispectr
@@ -152,7 +153,8 @@ contains
         use rt_parameters, only : nr, ni1, ni2, cdel
         use plasma, only: vt0, fvt, cltn
         use nr_grid, only: vzmin, vzmax
-        use maxwell, only: i0, vij, dfij
+        use maxwell, only: i0
+        use nr_grid, only: vij, dfij
         use lock_module        
         implicit none
         integer, intent(in) :: ispectr, iterat

@@ -171,7 +171,9 @@ contains
 
     real(wp) function d(x)
         !! возможно одна из самых замедляющих функций
-        use maxwell
+        use maxwell, only: i0, flag_d0, jindex, kindex
+        use nr_grid, only: vij, dij
+        use constants, only : zero
         use lock_module
         implicit none
         !integer i0

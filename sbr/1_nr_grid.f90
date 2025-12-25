@@ -1,5 +1,6 @@
 module nr_grid
     use kind_module
+    use maxwell, only: i0
     implicit none
 
     integer, parameter :: MAX_NR = 100
@@ -35,6 +36,13 @@ module nr_grid
 
     real(wp) :: source(MAX_NR)
     !! это относится к альфа-частицам
+
+    !! сетки для максвела
+    real(wp) v_grid(i0,MAX_NR)
+    !! сетка обычных скоростей
+    real(wp) vij(i0, MAX_NR), fij0(i0, MAX_NR,2), fij(i0, MAX_NR,2)
+    real(wp) dfij(i0, MAX_NR,2), dij(i0, MAX_NR,2)
+
 contains
 
 subroutine init_nr_grid_arrays(cltn)

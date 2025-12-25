@@ -231,7 +231,8 @@ contains
         use plasma, only: vt0, fvt, cltn, cnye
         use driven_current_module, only : zv1, zv2
         use nr_grid, only : dql
-        use maxwell, only: i0, vij, dfij, dij
+        use maxwell, only: i0
+        use nr_grid, only: vij, dfij, dij
         use small_vgrid, only: ipt, ipt1, MAX_PT
         use small_vgrid, only: vrj, dj, vgrid
         use lock_module, only: lock
