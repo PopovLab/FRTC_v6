@@ -184,13 +184,14 @@ contains
         use source_new_mod, only: rsou, sou, npta
         use plasma, only: fti, dn1, dn2, vk
         use nr_grid, only: dens, source
+        use nr_grid, only: MAX_NR
         implicit none
         real(wp), intent(inout) :: anb
         real(wp), intent(inout) :: fuspow
         real(wp) :: r, hr, tt
         real(wp) :: anb0, aratio, sssour
         real(wp) :: ddens, tdens
-        real(wp) :: sour(100)
+        real(wp) :: sour(MAX_NR)
         integer j
         hr = 1.d0/dble(nr+1)
         fuspow=anb*talfa*1.6022d-19
@@ -399,10 +400,10 @@ contains
         use constants, only: zero
         use rt_parameters, only: nr, itend0, kv
         use plasma, only:  vperp
-        use nr_grid, only: dqi0
+        use nr_grid, only: dqi0, MAX_NR
         implicit none
         integer :: i, j
-        real(wp) :: galfa(50,100)  ! возможно массив должеб быть доступен еще где-то
+        real(wp) :: galfa(50,MAX_NR)  ! возможно массив должеб быть доступен еще где-то
         if(itend0.gt.0) then
             do j=1,nr           ! begin 'rho' cycle
                 do i=1,50
@@ -417,9 +418,10 @@ contains
     subroutine alphas(d,u,j,kmax,g)
         use decrements, only: dgdu, kzero
         use constants, only : zero, one
+        use nr_grid, only: MAX_NR
         implicit real*8 (a-h,o-z)
         integer, intent(in) :: j, kmax
-        dimension d(50,100),u(50,100),g(50,100)
+        dimension d(50,MAX_NR),u(50,MAX_NR),g(50,MAX_NR)
         !common /arr/ dgdu(50,100),kzero(100)
         real(wp), parameter :: tiny=1.d-30
         integer :: k, km

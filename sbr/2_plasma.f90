@@ -1,6 +1,7 @@
 module plasma
     !! модуль параметров плазмы
     use kind_module  
+    use nr_grid, only: MAX_NR
     implicit none
     integer ngrid, nspl
     !! ASTRA radial grid number
@@ -33,12 +34,12 @@ module plasma
     real(wp) cltn
     !!common /a0ef1/ cltn    
 
-    real(wp) vperp(50,100),cnstal,zza,zze,valfa!,kv
+    real(wp) vperp(50,MAX_NR),cnstal,zza,zze,valfa!,kv
     !common /a0i5/ vperp(50,100),cnstal,zza,zze,valfa!,kv
 
     real(wp) vpmax
 
-    real(wp) vk(100), sk(100)
+    real(wp) vk(MAX_NR), sk(MAX_NR)
     !common /a0i2/ vk(100)
 
     integer, parameter :: ipsy = 5, ncoef = 5
@@ -56,7 +57,7 @@ module plasma
     real(wp) chebne(50),chebdne(50),chebddne(50)    
     !!common/ne_cheb
 
-    real(wp) enorm(100), fst(100)
+    real(wp) enorm(MAX_NR), fst(MAX_NR)
     !! em поле и еще что-то
     real(wp) dn1, dn2, dn3
 contains

@@ -217,6 +217,7 @@ contains
         use plasma !, only: fn1, fn2, fvt, vt0
         use nr_grid, only: dens, eta, fcoll
         use nr_grid, only: source !! нужна ли она тут вообще???
+        use nr_grid, only: MAX_NR
         implicit none
         real(wp), intent(inout) :: anb
         integer  :: i, j, k
@@ -227,7 +228,7 @@ contains
         real(wp) :: pn, fnr, fnrr
         real(wp) :: r, hr
         real(wp) :: dvperp, ddens, tdens
-        real(wp) :: vpmin(100), vcva(100)
+        real(wp) :: vpmin(MAX_NR), vcva(MAX_NR)
         hr = 1.d0/dble(nr+1)
         !c-------------------------------------------
         !c find velocity limits and initial dfdv

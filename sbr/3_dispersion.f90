@@ -275,6 +275,7 @@ end module partial_derivatives
 
 module decrements
     use kind_module
+    use nr_grid, only: MAX_NR
     implicit none
     real(wp) :: dnx
     real(wp) :: dhdnr
@@ -288,8 +289,8 @@ module decrements
     real(wp) :: cf1,cf2,cf3,cf4,cf5,cf6
     !!common /eg3/ cf1,cf2,cf3,cf4,cf5,cf6
 
-    real(wp) :: dgdu(50,100)
-    integer  :: kzero(100)
+    real(wp) :: dgdu(50,MAX_NR)
+    integer  :: kzero(MAX_NR)
     !!common /arr/ dgdu(50,100),kzero(100)
     !! используется в zatukh, ourlhcd2017 и alphas
 
