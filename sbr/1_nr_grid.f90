@@ -3,7 +3,7 @@ module nr_grid
     use maxwell, only: i0
     implicit none
 
-    integer, parameter :: MAX_NR = 100
+    integer, parameter :: MAX_NR = 200
     !! max size of nr-grids
 
     real(wp) :: dql(101,MAX_NR)
