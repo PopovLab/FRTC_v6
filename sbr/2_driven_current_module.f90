@@ -3,7 +3,7 @@ module driven_current_module
     use kind_module
     implicit none
 
-    real(wp)  :: zv1(100,2), zv2(100,2)
+    !real(wp)  :: zv1(100,2), zv2(100,2)
     !common/plosh/ zv1(100,2),zv2(100,2)!,sk(100)
     
     type DrivenCurrent

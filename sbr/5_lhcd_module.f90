@@ -229,7 +229,7 @@ contains
         use rt_parameters, only: nr, inew, ni1, ni2
         use plasma, only: zefff, fn1, fn2
         use plasma, only: vt0, fvt, cltn, cnye
-        use driven_current_module, only : zv1, zv2
+        !use driven_current_module, only : zv1, zv2
         use nr_grid, only : dql
         use maxwell, only: i0
         use nr_grid, only: vij, dfij, dij
@@ -244,7 +244,7 @@ contains
         real(wp) :: vt, vto, vmax, zff, cnyfoc
         real(wp) :: pn, fnr, fnrr
         real(wp) :: dconst, ddout
-        real(wp) :: dijk(MAX_PT,100,2), vrjnew(MAX_PT,100,2)
+        !real(wp) :: dijk(MAX_PT,100,2), vrjnew(MAX_PT,100,2)
         !встречает только один раз common/t01/dijk(101,100,2), vrjnew(101,100,2)
         !
         hr = 1.d0/dble(nr+1)
@@ -268,8 +268,8 @@ contains
             do i=1,ipt
                 vrj(i)=vgrid(i,j)/vto      !Vpar/Vt
                 dj(i)=dql(i,j)*dconst*vto  !D_normir
-                vrjnew(i,j,k)=vrj(i)
-                dijk(i,j,k)=dj(i)
+                !vrjnew(i,j,k)=vrj(i)
+                !dijk(i,j,k)=dj(i)
             end do
             do i=1,i0
                 if(vij(i,j).ge.vmax) then
@@ -291,8 +291,8 @@ contains
                 end if
                 dij(i,j,k)=ddout
             end do
-            zv1(j,k)=vrj(ipt1)
-            zv2(j,k)=vrj(ni1+ni2+ipt1)
+            !zv1(j,k)=vrj(ipt1)
+            !zv2(j,k)=vrj(ni1+ni2+ipt1)
         end do
     end 
 
